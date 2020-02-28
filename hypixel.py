@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-token = "NTc1MjAzMDE3MzE4NzI3NzAw.XNEhmw.lhGkzTS10Hkt7BnzGSHPyc1oQlA"
+token = "NjY5Njg1Njg4NTAwODc5Mzkw.XlhoPA.W078Vu7ws6ZHas6NHDm0vrA7Gv8"
 key = "e91ba361-3ad8-4083-8bb6-9c57fb97c4d6"
 blood_guild_id = "53c81676ed50878f4ccc75be"
 guild_id = "5988f8340cf2851f860c9a7b"
@@ -383,7 +383,7 @@ async def on_message(message):
                 d[name] = gxp
             c = 0
             embd = discord.Embed(title=title, description="last 7 days.", color=color)
-            msg = await client.send_message(message.channel, content="0/25")
+            msg = await channel.send(content="0/25")
             for j, i in enumerate(sorted(
                     d.items(), key=itemgetter(1), reverse=reverse), start=1):
                 name = name_from_uuid(i[0])[-1]["name"]
@@ -398,7 +398,7 @@ async def on_message(message):
             embd = discord.Embed(title="Wrong Usage of the command.")
 
     try:
-        await client.send_message(message.channel, content=None, embed=embd)
+        await channel.send(content=None, embed=embd)
     except UnboundLocalError:
         pass
 
